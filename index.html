@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
+    <style>
+        #file-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            height: 100%;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid;
+        }
+        #file-list li {
+            padding-left: 20px;
+            background-size: auto 100%;
+            background-image: url(https://image.flaticon.com/icons/png/128/148/148953.png);
+            background-repeat: no-repeat;
+            cursor: pointer;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        #file-list .file {
+            background-image: url(https://i1.wp.com/www.garrettjhs.com/wp-content/uploads/2017/11/document-icon-selected.png?fit=725%2C725);
+        }
+    </style>
+</head>
+<body>
+<div style="display: flex">
+    <div style="width: 50%">
+        <h1>Hello World!</h1>
+        <p>We are using node <span id="node-version"></span></p>
+        <p>Chrome <span id="chrome-version"></span></p>
+        <p>and Electron <span id="electron-version"></span></p>
+        <button id="notify"> Notify me</button>
+        <p>Drag a pig icon</p>
+    </div>
+    <div style="width: 50%;">
+        <button id="back-btn">Go back</button>
+        <ul id="file-list"></ul>
+    </div>
+</div>
+<img src="assets/pig.png" alt="pig" id="drag" />
+<script src="renderer.js"></script>
+
+</body>
+</html>
